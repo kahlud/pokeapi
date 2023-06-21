@@ -1,118 +1,187 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
+import App from './src';
+import {PokemonScreen} from './src/screen/pokemonList';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Evolution} from './src/screen/evolution';
+import {Favorites} from './src/screen/favorites';
+import {DetailsPokemon} from './src/screen/pokemonList/pokemonDetails';
+import {EvolutionDetail} from './src/screen/evolution/evolutionDetails';
+import {APP_COLORS} from './src/constants/colors';
+import {Image} from 'react-native';
+import {RootStackParamList} from './src/navigation/utils';
+import {Register} from './src/screen/register';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+type NavigateStackNavigatorProps = RootStackParamList;
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
+const Stack = createNativeStackNavigator<NavigateStackNavigatorProps>();
+const Tab = createBottomTabNavigator();
+const PokemonsStack = createNativeStackNavigator<NavigateStackNavigatorProps>();
+const PokemonEvolutionStack =
+  createNativeStackNavigator<NavigateStackNavigatorProps>();
 
-function Section({children, title}: SectionProps): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const PokemonsStackScreen = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+    <PokemonsStack.Navigator>
+      <PokemonsStack.Screen
+        name="PokemonHome"
+        component={PokemonScreen}
+        options={{
+          title: '',
+          headerShown: false,
+        }}
       />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+      <PokemonsStack.Screen
+        name="DetailPokemon"
+        component={DetailsPokemon}
+        options={{
+          title: '',
+          headerShown: false,
+        }}
+      />
+    </PokemonsStack.Navigator>
+  );
+};
+
+const PokemonsEvolutionStackScreen = () => {
+  return (
+    <PokemonEvolutionStack.Navigator>
+      <PokemonEvolutionStack.Screen
+        name="Evolution"
+        component={Evolution}
+        options={{
+          title: '',
+          headerShown: false,
+        }}
+      />
+      <PokemonEvolutionStack.Screen
+        name="DetailEvolution"
+        component={EvolutionDetail}
+        options={{
+          title: '',
+          headerShown: false,
+        }}
+      />
+    </PokemonEvolutionStack.Navigator>
+  );
+};
+
+const TabBottom = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {backgroundColor: APP_COLORS.background},
+      }}>
+      <Tab.Screen
+        name="PokemonList"
+        component={PokemonsStackScreen}
+        options={{
+          title: '',
+          headerShown: false,
+          tabBarItemStyle: {paddingTop: 16},
+          tabBarIcon: ({focused, size}) => {
+            const imageSize = size * 1.4;
+            if (focused) {
+              return (
+                <Image
+                  source={require('./src/assets/pelotaColor.png')}
+                  style={{width: imageSize, height: imageSize}}
+                />
+              );
+            } else {
+              return (
+                <Image
+                  source={require('./src/assets/pelota.png')}
+                  style={{width: imageSize, height: imageSize}}
+                />
+              );
+            }
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Evolution"
+        component={PokemonsEvolutionStackScreen}
+        options={{
+          title: '',
+          headerShown: false,
+          tabBarItemStyle: {paddingTop: 16},
+          tabBarIcon: ({focused, size}) => {
+            const imageSize = size * 1.4;
+            if (focused) {
+              return (
+                <Image
+                  source={require('./src/assets/huevoColor.png')}
+                  style={{width: imageSize, height: imageSize}}
+                />
+              );
+            } else {
+              return (
+                <Image
+                  source={require('./src/assets/huevos.png')}
+                  style={{width: imageSize, height: imageSize}}
+                />
+              );
+            }
+          },
+        }}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          title: '',
+          headerShown: false,
+          tabBarItemStyle: {paddingTop: 16},
+          tabBarIcon: ({focused, size}) => {
+            const imageSize = size * 1.4;
+            if (focused) {
+              return (
+                <Image
+                  source={require('./src/assets/estrella.png')}
+                  style={{width: imageSize, height: imageSize}}
+                />
+              );
+            } else {
+              return (
+                <Image
+                  source={require('./src/assets/estrellaBW.png')}
+                  style={{width: imageSize, height: imageSize}}
+                />
+              );
+            }
+          },
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
+
+export default function index() {
+  return (
+    <NavigationContainer>
+      <Provider store={store}>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Login"
+            component={App}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Register"
+            component={Register}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Tab"
+            component={TabBottom}
+            options={{headerShown: false}}
+          />
+        </Stack.Navigator>
+      </Provider>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
-
-export default App;

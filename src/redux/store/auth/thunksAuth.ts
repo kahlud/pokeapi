@@ -10,6 +10,6 @@ export const chekingAuthentication = ({email, password}) => {
 export const starGoogleSingIn = () => {
   return async dispatch => {
     dispatch(checkingCredential);
-    const result = singInWithGoogle();
+    // const result = singInWithGoogle();
   };
 };
