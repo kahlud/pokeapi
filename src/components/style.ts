@@ -42,6 +42,7 @@ export default StyleSheet.create({
     },
     elevation: 4,
     marginTop: 10,
+    marginHorizontal: 4,
   },
   typeName: {fontWeight: '500', textAlign: 'center', color: 'white'},
   containerStats: {

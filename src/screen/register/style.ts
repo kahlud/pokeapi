@@ -3,6 +3,7 @@ import {APP_COLORS} from '../../constants/colors';
 
 export default StyleSheet.create({
   safeArea: {backgroundColor: APP_COLORS.background, flex: 1},
+  back: {width: '100%', paddingTop: 35},
   container: {
     backgroundColor: APP_COLORS.background,
     flex: 1,
@@ -11,8 +12,8 @@ export default StyleSheet.create({
   },
   image: {
     zIndex: 99,
-    marginBottom: -40,
-    marginTop: -50,
+    marginBottom: -48,
+    marginTop: -40,
     shadowColor: '#242424',
     shadowOffset: {
       width: 4,
@@ -41,5 +42,12 @@ export default StyleSheet.create({
   },
   containerBotton: {
     width: '100%',
+  },
+  error: {color: 'white', position: 'absolute'},
+  errorEmail: {
+    top: 126,
+  },
+  errorPassword: {
+    top: 216,
   },
 });

@@ -12,7 +12,7 @@ import {fetchPokemonsEvolution} from './store/services';
 import style from './style';
 import {CardEvolution} from './components/CardEvolution';
 
-export const Evolution = () => {
+export const EvolutionScreen = () => {
   const dispatch = useDispatch<AppDispatch>();
   useEffect(() => {
     dispatch(fetchPokemonsEvolution());

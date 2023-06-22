@@ -5,11 +5,11 @@ import {Text, TextInput, View} from 'react-native';
 interface IInput {
   title: string;
   password?: boolean;
-  setValue: React.Dispatch<React.SetStateAction<undefined>>;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const Input = ({title, password, setValue}: IInput) => {
-  const [value, onChangeText] = useState();
+  const [value, onChangeText] = useState('');
   return (
     <View style={style.containerInput}>
       <Text style={style.text}>{title}</Text>

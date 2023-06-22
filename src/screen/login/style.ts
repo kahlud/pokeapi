@@ -31,7 +31,7 @@ export default StyleSheet.create({
     fontWeight: '700',
     fontSize: 18,
     marginHorizontal: 5,
-    marginVertical: 3,
+    marginVertical: 6,
   },
   image: {
     zIndex: 99,
@@ -58,6 +58,7 @@ export default StyleSheet.create({
     shadowOpacity: 0.5,
     shadowRadius: 18,
     elevation: 13,
+    marginBottom: 8,
   },
   containerBotton: {
     width: '85%',
@@ -65,4 +66,7 @@ export default StyleSheet.create({
     marginTop: 26,
     justifyContent: 'space-between',
   },
+  error: {color: 'white', position: 'absolute'},
+  errorUser: {top: 120},
+  errorPassword: {top: 210},
 });
