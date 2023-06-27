@@ -3,7 +3,7 @@ import {APP_COLORS} from '../../constants/colors';
 
 export default StyleSheet.create({
   safeArea: {backgroundColor: APP_COLORS.background, flex: 1},
-  back: {width: '100%', paddingTop: 35},
+  back: {alignSelf: 'flex-start', marginLeft: 15, marginTop: -6},
   container: {
     backgroundColor: APP_COLORS.background,
     flex: 1,

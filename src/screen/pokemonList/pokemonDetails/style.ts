@@ -12,11 +12,10 @@ export default StyleSheet.create({
     width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     paddingBottom: 8,
   },
   name: {fontSize: 35, fontWeight: '700', color: '#272727'},
-
   image: {
     width: 280,
     height: 280,

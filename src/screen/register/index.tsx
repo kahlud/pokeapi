@@ -7,6 +7,7 @@ import {Botton} from '../../components/Botton';
 import auth from '@react-native-firebase/auth';
 import {useNavigation} from '@react-navigation/native';
 import {BottonBack} from '../../components/BottonBack';
+import {goglesignIn} from '../../utils/googleSignin';
 
 export const Register = () => {
   const [eMail, setEMail] = useState('');
@@ -68,12 +69,14 @@ export const Register = () => {
           />
         </View>
         <Botton
-          title="Registrarme con google"
+          title="Registrarme con Google"
           color="#ba0201"
           colorText="white"
           width="75%"
           marginTop={25}
-          onClick={() => {}}
+          onClick={() => {
+            goglesignIn();
+          }}
         />
       </View>
     </SafeAreaView>

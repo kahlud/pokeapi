@@ -22,7 +22,8 @@ export const EvolutionDetail = ({
       ]}
       style={style.safeArea}>
       <SafeAreaView style={style.safeArea}>
-        <View style={{paddingVertical: 18}}>
+        <View
+          style={{alignSelf: 'flex-start', marginLeft: 15, marginBottom: -10}}>
           <BottonBack />
         </View>
 
@@ -31,9 +32,9 @@ export const EvolutionDetail = ({
           ListHeaderComponent={
             <Types
               types={route.params.evolution[0].types}
-              width={'35%'}
+              width={'30%'}
               fontSize={18}
-              sizeImage={30}
+              sizeImage={20}
             />
           }
           renderItem={({item, index}) => (

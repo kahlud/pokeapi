@@ -13,7 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8D7F9B800AF5FEFD93DB58DA /* libPods-PokeApi-PokeApiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C83A9583FE944CC744C6FF88 /* libPods-PokeApi-PokeApiTests.a */; };
-		9BF0931A2A440524007E0381 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF093192A440524007E0381 /* GoogleService-Info.plist */; };
+		9B885FBD2A49D8CD00239C8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9B885FBC2A49D8CD00239C8E /* GoogleService-Info.plist */; };
 		F6347266BCF88B1DA6119E95 /* libPods-PokeApi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06AD1F41A7B99562E1362896 /* libPods-PokeApi.a */; };
 /* End PBXBuildFile section */
 
@@ -43,7 +43,7 @@
 		5B7EB9410499542E8C5724F5 /* Pods-PokeApi-PokeApiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeApi-PokeApiTests.debug.xcconfig"; path = "Target Support Files/Pods-PokeApi-PokeApiTests/Pods-PokeApi-PokeApiTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PokeApi/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-PokeApi-PokeApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PokeApi-PokeApiTests.release.xcconfig"; path = "Target Support Files/Pods-PokeApi-PokeApiTests/Pods-PokeApi-PokeApiTests.release.xcconfig"; sourceTree = "<group>"; };
-		9BF093192A440524007E0381 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9B885FBC2A49D8CD00239C8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C83A9583FE944CC744C6FF88 /* libPods-PokeApi-PokeApiTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PokeApi-PokeApiTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -118,7 +118,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				9BF093192A440524007E0381 /* GoogleService-Info.plist */,
+				9B885FBC2A49D8CD00239C8E /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* PokeApi */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* PokeApiTests */,
@@ -248,7 +248,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				9BF0931A2A440524007E0381 /* GoogleService-Info.plist in Resources */,
+				9B885FBD2A49D8CD00239C8E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

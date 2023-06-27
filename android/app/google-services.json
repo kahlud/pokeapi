@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "548377977938",
+    "project_id": "pokeapp-bbb80",
+    "storage_bucket": "pokeapp-bbb80.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548377977938:android:856c47b16bb0865c29eb8b",
+        "android_client_info": {
+          "package_name": "com.pokeapi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548377977938-53pk1rtr633dg6u0if0j7eu5v1vcr51s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pokeapi",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "548377977938-4vmtrvgg4de1ghk48dit18igqe5qa1bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAibD-OyWpxAGPjHAHh5n4FfN8uWz5ql8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548377977938-4vmtrvgg4de1ghk48dit18igqe5qa1bi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "548377977938-9t72o6ir54qcsbk7ncegcum5lomlh1aq.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pokeApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

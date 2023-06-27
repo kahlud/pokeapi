@@ -22,6 +22,7 @@ export const CardPokemon = ({url}: IPokemon) => {
   const urlPokemon = url.split(baseURL);
   const [dataPokemon, setdataPokemon] = useState<PokemonDetail>();
   const {navigate} = useNavigation();
+  const [favorite, setFavorite] = useState(false);
 
   useEffect(() => {
     const data = async () => {
@@ -43,11 +44,45 @@ export const CardPokemon = ({url}: IPokemon) => {
 
   return (
     <TouchableOpacity
-      onPress={() => navigate('DetailPokemon', {pokemon: dataPokemon})}
+      onPress={() =>
+        navigate('DetailPokemon', {
+          pokemon: dataPokemon,
+          isFavorite: favorite,
+          setIsFavorite: setFavorite,
+        })
+      }
       style={[
         style.card,
         {backgroundColor: COLOR[dataPokemon?.types[0].type.name].base},
       ]}>
+      <TouchableOpacity
+        style={{
+          alignSelf: 'flex-end',
+          marginRight: 28,
+          marginBottom: 14,
+          marginTop: -6,
+        }}
+        onPress={() => setFavorite(!favorite)}>
+        {favorite ? (
+          <Image
+            source={require('../../../assets/favorito.png')}
+            style={{
+              width: 20,
+              height: 20,
+              position: 'absolute',
+            }}
+          />
+        ) : (
+          <Image
+            source={require('../../../assets/favoritoBW.png')}
+            style={{
+              width: 20,
+              height: 20,
+              position: 'absolute',
+            }}
+          />
+        )}
+      </TouchableOpacity>
       <View style={style.background}>
         <Image
           source={{uri: `${dataPokemon?.sprites?.other?.home.front_default}`}}

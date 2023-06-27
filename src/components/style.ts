@@ -79,11 +79,10 @@ export default StyleSheet.create({
   },
 
   touchableBack: {
-    position: 'absolute',
-    left: 20,
+    paddingHorizontal: 4,
+    paddingVertical: 4,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingBottom: 8,
   },
   back: {
     width: 25,

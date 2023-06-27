@@ -19,16 +19,16 @@
 	<key>STORAGE_BUCKET</key>
 	<string>pokeapp-bbb80.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:548377977938:ios:bf20622ab3157a2d29eb8b</string>
+	<string>1:548377977938:ios:185cd1f0223ea6b029eb8b</string>
 </dict>
 </plist>

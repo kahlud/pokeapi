@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {Image, SafeAreaView, ScrollView, Text, View} from 'react-native';
+import {
+  Image,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {Navigation, RootStackParamList} from '../../../navigation/utils';
 import {COLOR} from '../../../constants/colors';
 import LinearGradient from 'react-native-linear-gradient';
@@ -19,8 +26,9 @@ export const DetailsPokemon = ({
 }: Navigation<RootStackParamList, 'DetailPokemon'>) => {
   const [specie, setSpecie] = useState<PokemonsSpecie>();
 
-  const navigation = useNavigation();
+  const [favorite, setFavorite] = useState(route.params.isFavorite);
 
+  const navigation = useNavigation();
   useEffect(() => {
     const data = async () => {
       const resp = await AxiosRequest.get(route.params.pokemon.species.url);
@@ -44,6 +52,30 @@ export const DetailsPokemon = ({
           <Text style={style.name}>
             {capitalize(route.params.pokemon.name)}
           </Text>
+          <TouchableOpacity
+            style={{}}
+            onPress={() => {
+              setFavorite(!favorite);
+              route.params.setIsFavorite(!favorite);
+            }}>
+            {favorite ? (
+              <Image
+                source={require('../../../assets/favorito.png')}
+                style={{
+                  width: 35,
+                  height: 35,
+                }}
+              />
+            ) : (
+              <Image
+                source={require('../../../assets/favoritoBW.png')}
+                style={{
+                  width: 35,
+                  height: 35,
+                }}
+              />
+            )}
+          </TouchableOpacity>
         </View>
         <ScrollView bounces={false}>
           <View style={style.containerImage}>

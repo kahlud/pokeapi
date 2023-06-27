@@ -8,7 +8,11 @@ export type Navigation<
 > = NativeStackScreenProps<P, R>;
 
 export type RootStackParamList = {
-  DetailPokemon: {pokemon: PokemonDetail};
+  DetailPokemon: {
+    pokemon: PokemonDetail;
+    isFavorite: boolean;
+    setIsFavorite: React.Dispatch<React.SetStateAction<boolean>>;
+  };
   DetailEvolution: {evolution: []};
   Login: undefined;
   Tab: undefined;

@@ -6,6 +6,7 @@ import {Botton} from '../../components/Botton';
 import Pokeball from '../../assets/pokeball.svg';
 import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
+import {goglesignIn} from '../../utils/googleSignin';
 
 // import {useDispatch} from 'react-redux';
 // import {AppDispatch} from '../../redux/store';
@@ -68,7 +69,9 @@ export const LoginScreen = () => {
 
             <Botton
               title="Google"
-              onClick={() => {}}
+              onClick={() => {
+                goglesignIn();
+              }}
               disabled={false}
               color="#ebebeb"
               width="46%"
